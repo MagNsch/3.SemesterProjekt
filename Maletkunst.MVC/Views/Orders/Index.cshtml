@@ -1,0 +1,46 @@
+﻿@model Maletkunst.DAL.Models.Order;
+
+@if (Model.OrderNumber == 0)
+{
+    <div class="orderinformation-picturesold">
+        <h3>Beklager, ordren indeholder et billede der er solgt til anden side.</h3>
+    </div>
+}
+else
+{
+    <h1></h1>
+    <div class="orderinformation">
+        <h4>Ordreinformation</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.OrderNumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.OrderDate)
+            </dd>
+
+            <h4>Malerier</h4>
+            @foreach (var orderLine in Model.OrderLines)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayFor(model => orderLine.Painting.Title)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => orderLine.Painting.Price) kr.
+                </dd>
+            }
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Total)
+            </dt>
+            <dd class="col-sm-10">
+                <b></b>@Html.DisplayFor(model => model.Total) kr.<b/>
+            </dd>
+        </dl>
+    </div>
+}

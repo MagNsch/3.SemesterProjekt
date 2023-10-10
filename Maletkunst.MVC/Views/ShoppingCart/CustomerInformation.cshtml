@@ -1,0 +1,50 @@
+﻿@model CustomerInformationViewModel
+
+<h1>Kundeoplysninger</h1>
+
+<div>
+    <form asp-controller="Orders" asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="firstName">Fornavn</label>
+            <input asp-for="FirstName" id="firstName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Efternavn</label>
+            <input asp-for="LastName" id="lastName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Adresse</label>
+            <input asp-for="Address" id="address" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="postalCode">Postnummer</label>
+            <input asp-for="PostalCode" id="postalCode" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="city">By</label>
+            <input asp-for="City" id="city" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input asp-for="Email" id="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefonnummer</label>
+            <input asp-for="Phone" id="phone" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+        <input type="hidden" asp-for="ShoppingCart" />
+        <button type="submit" class="btn btn-primary">Betal</button>
+        </div>
+
+        <div class="break">
+            <label for="break">  </label>
+        </div>
+
+
+    </form>
+</div>
+
+
+           

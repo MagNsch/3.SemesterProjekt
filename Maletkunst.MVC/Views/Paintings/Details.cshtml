@@ -1,0 +1,30 @@
+﻿@model Maletkunst.DAL.Models.Painting
+
+@{
+ViewData["Title"] = "Details";
+}
+<div>
+    <div class="Details">
+        <img src="/images/@(Model.Id.ToString() + ".jpg")" alt="@Model.Title">
+       
+        <br><br>
+        <h3><b>@Model.Title</b></h3>
+        <p>
+            <b>Kunstner:</b> @Model.Artist<br>
+            <b>Kategori:</b> @Model.Category<br>
+            <b>@Model.Price kr.</b>
+        </p>
+        <p>
+            @Model.Description
+        </p>
+
+        <form asp-controller="ShoppingCart" asp-action="Add" method="post" class="d-inline-block">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <button type="submit" class="add-to-cart-button">Tilføj til kurv</button>
+        </form>
+        <div>
+            @Html.ActionLink("", "", new { id = Model.Id }) |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>

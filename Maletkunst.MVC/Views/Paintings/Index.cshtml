@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Maletkunst.DAL.Models.Painting>
+
+@{
+	ViewData["Title"] = "Malerier";
+}
+
+<div class="d-flex justify-content-center">
+	<form asp-controller="Paintings" asp-action="Index" method="get">
+		<div class="input-group">
+		<input type="hidden" name="category" value="@ViewData["Category"]" />
+		<input name="searchString" class="form-control" type="search" placeholder="Search" aria-label="Search" asp-route-searchString="@ViewData["SearchString"]">
+		<button class="btn btn-primary" type="submit">Search</button>
+		</div>
+	</form>
+</div>
+
+
+
+@if (Model == null || Model.Count() == 0)
+{
+	<p>Ingen malerier</p>
+}
+else
+{
+	<div class="Paintings-container">
+		@foreach (var item in Model)
+		{
+			<div class="Paintings">
+				<a href="/Paintings/Details?id=@item.Id">
+					<img src="/thumbnails/@(item.Id.ToString() + ".jpg")">
+				</a>
+				<br><br>
+				<h3><b>@item.Title</b></h3>
+				<p><b>Kunstner:</b> @item.Artist<br>
+				<b>Kategori:</b> @item.Category<br>
+					<b>@item.Price kr.</b>
+				</p>
+				<form asp-controller="ShoppingCart" asp-action="Add" method="post" class="d-inline-block">
+					<input type="hidden" name="id" value="@item.Id" />
+					<button type="submit" class="add-to-cart-button">Tilføj til kurv</button>
+				</form>
+			</div>
+		}
+
+
+	</div>
+
+}
