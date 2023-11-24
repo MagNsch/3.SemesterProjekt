@@ -72,8 +72,11 @@ public partial class MainForm : Form
 
 	private void LoadImage(Painting painting)
 	{
-		string imagePath = $"https://www.maletkunst.dk/thumbnails/{painting.Id}.jpg";
-		try
+        //string imagePath = $"Maletkunst.MVC/wwwroot/images/{painting.Id}.jpg";
+
+        string rootPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\..\Maletkunst.MVC"));
+        string imagePath = Path.Combine(rootPath, "wwwroot", "images", $"{painting.Id}.jpg");
+        try
 		{
 			using (var webClient = new WebClient())
 			{
