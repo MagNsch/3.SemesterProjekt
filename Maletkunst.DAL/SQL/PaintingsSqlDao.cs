@@ -6,7 +6,8 @@ namespace Maletkunst.DAL.SQL;
 
 public class PaintingsSqlDao : IPaintingsDao
 {
-    private string connectionString = @"Data Source=hildur.ucn.dk; Initial Catalog=DMA-CSD-V221_10434660; User ID=DMA-CSD-V221_10434660; Password=Password1!;";
+    private string connectionString = @"Data Source =.\SQLEXPRESS; Initial Catalog = semester3Project; Integrated Security = True";
+    /*@"Data Source=hildur.ucn.dk; Initial Catalog=DMA-CSD-V221_10434660; User ID=DMA-CSD-V221_10434660; Password=Password1!;";*/
 
     public PaintingsSqlDao(String connectionString) { this.connectionString = connectionString; }
 

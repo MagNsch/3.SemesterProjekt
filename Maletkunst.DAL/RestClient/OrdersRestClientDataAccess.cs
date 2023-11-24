@@ -11,8 +11,8 @@ public class OrdersRestClientDataAccess : IOrdersDataAccess
 
 	public OrdersRestClientDataAccess()
 	{
-		restUrl = "https://www.maletkunst.dk/api/v1/Orders";
-		//restUrl = "https://localhost:7150/";
+		//restUrl = "https://www.maletkunst.dk/api/v1/Orders";
+		restUrl = "https://localhost:7274/v1/Orders";
 
         client = new RestSharp.RestClient(restUrl);
 	}

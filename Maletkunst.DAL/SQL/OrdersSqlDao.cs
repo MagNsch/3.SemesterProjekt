@@ -6,10 +6,12 @@ namespace Maletkunst.DAL.SQL;
 
 public class OrdersSqlDao : IOrdersDataAccess
 {
-    private const string connectionString = @"Data Source=hildur.ucn.dk;
-                                            Initial Catalog=DMA-CSD-V221_10434660;
-                                            User ID=DMA-CSD-V221_10434660;
-                                            Password=Password1!;";
+    private const string connectionString = @"Data Source =.\SQLEXPRESS; Initial Catalog = semester3Project; Integrated Security = True";
+
+    //@"Data Source=hildur.ucn.dk;
+    //                                    Initial Catalog=DMA-CSD-V221_10434660;
+    //                                    User ID=DMA-CSD-V221_10434660;
+    //                                    Password=Password1!;";
 
     private const string queryString_InsertOrder = @"INSERT INTO [Order] (Status, Total, Customer_Id)
                                                    VALUES(@Status, @Total, @Customer_Id);

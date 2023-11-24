@@ -11,7 +11,8 @@ public class PaintingsRestClientDao : IPaintingsDao
 	public readonly RestSharp.RestClient client;
     public PaintingsRestClientDao()
     {
-        restUrl = "https://www.maletkunst.dk/api/v1/Paintings";
+        restUrl = "https://localhost:7274/v1/Paintings";
+        //restUrl = "https://www.maletkunst.dk/api/v1/Paintings";
         client = new RestSharp.RestClient(restUrl);
 	}
 

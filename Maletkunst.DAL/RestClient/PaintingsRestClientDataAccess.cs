@@ -11,8 +11,9 @@ public class PaintingsRestClientDataAccess : IPaintingsDataAccess
 
 	public PaintingsRestClientDataAccess()
 	{
-		restUrl = "https://www.maletkunst.dk/api/v1/Paintings";
-		client = new RestSharp.RestClient(restUrl);
+        //restUrl = "https://www.maletkunst.dk/api/v1/Paintings";
+        restUrl = "https://localhost:7274/v1/Paintings";
+        client = new RestSharp.RestClient(restUrl);
 	}
 
 	public IEnumerable<Painting> GetAllAvailablePaintings()
